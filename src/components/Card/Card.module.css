@@ -1,0 +1,44 @@
+.contenedor{
+    display: flex;
+    flex-direction: column;
+    
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: slategray;
+
+    width: 350px;
+}
+
+.botonClose{
+    position: absolute;
+    font-size: 20px;
+
+    margin: 10px;
+    align-self: flex-end;
+    border: none;
+
+    color: aliceblue;
+    transition: all .5s;
+    cursor: pointer;
+    background: none;
+}
+
+.botonClose:hover{
+    transform: rotate(180deg) scale(1.5);
+}
+
+img{
+    justify-self: baseline;
+    margin: 10px;
+    height: 50%;
+    border-radius: 5px;
+}
+
+h2{
+    margin: 5px;
+    height: 10%;
+}
+
+.nombre{
+    font-size: 35px;
+}
