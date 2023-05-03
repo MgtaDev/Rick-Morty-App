@@ -12,6 +12,7 @@ input{
 
 button{
     height: 30px;
+    
     border: none;
     border-left: 2px solid rgb(38, 44, 49);
     background-color: slategray;
