@@ -2,4 +2,5 @@
    text-align: center;
    background-image: url(../assets/stars-1654074.jpg);
    min-height: 100vh;
-}
+   z-index: -10;
+};
