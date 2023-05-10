@@ -13,6 +13,10 @@ export default function Nav({ onSearch }) {
         <button className={style.botonNav}>
           <NavLink to="/about" className={style.linkNav}>About</NavLink>
         </button>
+
+        <button className={style.botonNav}>
+          <NavLink to="/favorites" className={style.linkNav}>Favorites</NavLink>
+        </button>
       </div>
 
     <div className={style.contenedorSearch}>
