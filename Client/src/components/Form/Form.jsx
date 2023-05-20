@@ -41,6 +41,7 @@ export default function Form({ login }) {
           name="email"
           placeholder="Correo electrónico"
           onChange={handleOnChange}
+          autocomplete="email"
         />
         {errors.email && <p>{errors.email}</p>}
         <br />
@@ -49,8 +50,10 @@ export default function Form({ login }) {
           type="text"
           value={userData.password}
           name="password"
+          id="password"
           placeholder="Contraseña"
           onChange={handleOnChange}
+          autocomplete="current-password"
         />
         {errors.password && <p>{errors.password}</p>}
         <br />
