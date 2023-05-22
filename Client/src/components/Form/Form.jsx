@@ -53,7 +53,7 @@ export default function Form({ login }) {
           id="password"
           placeholder="Contraseña"
           onChange={handleOnChange}
-          autocomplete="current-password"
+          autoComplete="current-password"
         />
         {errors.password && <p>{errors.password}</p>}
         <br />
