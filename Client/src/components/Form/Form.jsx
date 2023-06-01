@@ -47,7 +47,7 @@ export default function Form({ login }) {
         <br />
         <label htmlFor="password">Password</label>
         <input
-          type="text"
+          type="password"
           value={userData.password}
           name="password"
           id="password"

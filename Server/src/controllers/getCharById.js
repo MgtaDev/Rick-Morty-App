@@ -19,7 +19,7 @@ const getCharById = async (req, res) => {
             gender: data.gender
         };
 
-        return res.json(character);
+        return res.status(200).json(character);
 
 
     } catch (error) {
