@@ -4,7 +4,7 @@ const deleteFav = async (req, res) => {
     const { id } = req.params;
     
     try {
-        await Favorite.destroy({where: { id }, force: true})
+        await Favorite.destroy({where: { id }})
         const favList = await Favorite.findAll();
 
         return res.status(202).send(favList)

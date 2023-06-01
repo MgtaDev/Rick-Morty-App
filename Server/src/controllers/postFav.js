@@ -8,13 +8,12 @@ const postFavs = async (req, res) => {
         if(!id || !name || !origin || !status || !image || !species || !gender){
             return res.status(401).send("Faltan datos")
         } 
-        const postedFav = await Favorite.findOrCreate({where: { id }, defaults: { id, name, origin, status, image, species, gender }});
 
-        res.status(200).send(postedFav)
+        await Favorite.findOrCreate({where: { id }, defaults: { id, name, origin, status, image, species, gender }});
         const favList = await Favorite.findAll();
 
-        return favList;
-
+        return res.status(200).send(favList);
+        
     } catch (error) {
         return res.status(500).send(error.message)
     }
