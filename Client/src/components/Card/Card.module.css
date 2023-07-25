@@ -79,3 +79,10 @@ span{
     text-decoration: none;
     color: black;
 }
+@media (max-width: 412px) {
+    h2{
+        position: relative;
+        top: 0;
+    }
+  
+}

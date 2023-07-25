@@ -9,4 +9,6 @@
 }
 .icons{
     text-decoration: none;
+    filter: invert(100%);
+    margin-bottom: 4rem;
 }

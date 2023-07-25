@@ -24,3 +24,9 @@ button{
     color: rgb(254, 254, 254);
     cursor: pointer;
 }
+@media(max-width:680px){
+       input{
+        width: 100%;
+       }
+     
+    }

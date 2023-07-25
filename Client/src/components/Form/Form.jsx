@@ -1,5 +1,7 @@
 import { useState } from "react";
 import validation from "../validation";
+import style from './Form.module.css'
+import Logo from '../assets/Logo.png'
 
 export default function Form({ login }) {
   const [userData, setUserData] = useState({
@@ -31,8 +33,8 @@ export default function Form({ login }) {
   }
 
   return (
-    <div>
-      <img src="" alt="" />
+    <div className={style.wrapper}>
+      <img src={Logo} alt="" />
       <form onSubmit={handleSubmit}>
         <label htmlFor="email">Email</label>
         <input
@@ -41,7 +43,6 @@ export default function Form({ login }) {
           name="email"
           placeholder="Correo electrónico"
           onChange={handleOnChange}
-          autocomplete="email"
         />
         {errors.email && <p>{errors.email}</p>}
         <br />
@@ -53,7 +54,6 @@ export default function Form({ login }) {
           id="password"
           placeholder="Contraseña"
           onChange={handleOnChange}
-          autoComplete="current-password"
         />
         {errors.password && <p>{errors.password}</p>}
         <br />

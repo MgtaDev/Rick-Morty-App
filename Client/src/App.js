@@ -32,29 +32,31 @@ function App() {
 
    const login = async (userData) => {
       try {
-         const URL = 'http://localhost:3001/rickandmorty/login/';
-         const { email, password } = userData;
-         const { data } = await axios(URL + `?email=${email}&password=${password}`)
-         const { access } = data;
+         // const URL = 'http://localhost:3001/rickandmorty/login/';
+         // const { email, password } = userData;
+         // const { data } = await axios.get(URL + `?email=${email}&password=${password}`)
+         // const { access } = data;
 
-         setAccess(data);
-         access && navigate('/home');
+         // setAccess(data);
+         // access && navigate('/home');
+         navigate('/home')
 
       } catch (error) {
-         swal('ERROR',error.message,'error')
+         swal('ERROR','No ha sido posible loguearte correctamente','error')
       }
 
 
    }
 
-   useEffect(() => {
-      !access && navigate('/home');
-   }, [access]);
+   // useEffect(() => {
+   //    !access && navigate('/');
+   // }, [access]);
 
 
    const onClose = (id) => {
       const characterFiltered = characters.filter(character => character.id !== parseInt(id))
       setCharacters(characterFiltered)
+      swal("SUCCESS", 'Character deleted', 'success')
    };
 
    return (
@@ -66,7 +68,7 @@ function App() {
 
          <Routes>
             <Route path='/' element={<Form login={login} />} />
-            <Route path='/home' element={<Cards characters={characters} onClose={onClose} />} />
+            <Route path='/home' element={<Cards characters={characters} setCharacters={setCharacters} onClose={onClose} />} />
             <Route path='/about' element={<About />} />
             <Route path='/detail/:id' element={<Detail />} />
             <Route path='/favorites' element={<Favorites />} />

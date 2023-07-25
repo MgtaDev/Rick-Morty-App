@@ -5,3 +5,14 @@
     justify-content: center;
     padding: 4rem;
 }
+@media (max-width:940px){
+    .contenedor{
+        margin-top: 10rem;
+    }
+}
+
+@media (max-width:680px) {
+    .contenedor{
+        margin-top: 15rem;
+    }
+}

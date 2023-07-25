@@ -23,7 +23,6 @@
     display: flex;
     justify-content: space-between;
     position: relative;
-    /* margin-bottom: -2.4rem; */
 }
 .contenedorBoton button{
 margin-top: 1.5rem;
@@ -46,3 +45,57 @@ margin-top: 1.5rem;
     transition: .3s;
 }
 
+.exit{
+    width: 30px;
+    height: 30px;
+    filter: invert(100%);
+    position: relative;
+    right: 2%;
+    cursor: pointer;
+}
+@media(max-width:940px){
+.contenedorNav{
+height: 200px
+}
+.botonNav{
+  padding-top: 3rem;
+}
+.contenedorBoton img{
+    margin-left: 8em;
+}
+}
+@media(max-width:680px){
+    .contenedorNav{
+    height: 245px
+    }
+    .botonNav{
+      padding-top: 3rem;
+    }
+    .contenedorBoton img{
+        margin-left: 2em;
+    }
+    }
+    @media(max-width:680px){
+       
+        .contenedorNav {
+            flex-direction: column;
+        }
+        .contenedorBoton img{
+            position: relative;
+            left: 60%;
+            justify-content: center;
+        }
+        .contenedorBoton{
+            margin-bottom: 1rem;
+            margin-left:-15rem
+        }
+        }
+    @media (max-width:412px ) {
+        .contenedorBoton{
+        margin-right:7rem;
+        }
+        .contenedorBoton img{
+            position: relative;
+            left: 95%;
+        }
+    }

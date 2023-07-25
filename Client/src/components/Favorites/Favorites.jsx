@@ -31,11 +31,8 @@ const Favorites = ({myFavorites}) => {
 
     return (
         <div className={style.favorites}>
-            {
-                myFavorites.length < 1
-                ? <h2>No favorites...</h2>
-                : <>
-                <select onChange={handleOrder}>
+        
+            <select onChange={handleOrder}>
                     <option value="A">Ascendente</option>
                     <option value="D">Descendente</option>
                 </select><select onChange={handleFilter}>
@@ -44,8 +41,11 @@ const Favorites = ({myFavorites}) => {
                     <option value="Genderless">Genderless</option>
                     <option value="unknown">Unknown</option>
                     <option value="AllCharacters">All Characters</option>
-                </select>
-                </>
+            </select>
+            {
+                myFavorites.length < 1
+                ? <h2>No favorites...</h2>
+                : ''
             }
          
             <div className={style.container}>
