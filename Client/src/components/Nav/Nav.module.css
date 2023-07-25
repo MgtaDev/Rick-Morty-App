@@ -1,12 +1,18 @@
 .contenedorNav{
-    position: sticky;
+    position:fixed;
     top: 0px;
-    background-color: rgb(17, 17, 76);
-    z-index: 100;
-    
+    background-color: rgb(27, 32, 37);
+    z-index: 120;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
+    box-shadow: 4px 4px 20px rgb(56, 130, 164);
+}
+.Logo{
+    width:170px;
+    position: relative;
+    margin-left:3.5rem;
 }
 
 .contenedorSearch, .contenedorBoton{
@@ -15,7 +21,12 @@
 
 .contenedorBoton{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    position: relative;
+    /* margin-bottom: -2.4rem; */
+}
+.contenedorBoton button{
+margin-top: 1.5rem;
 }
 
 .botonNav{
@@ -28,5 +39,10 @@
 .linkNav{
     text-decoration: none;
     color: aliceblue;
+    font-size: 25px;
+}
+.linkNav:hover{
+    color: rgb(56, 130, 164);
+    transition: .3s;
 }
 

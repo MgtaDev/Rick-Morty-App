@@ -8,6 +8,7 @@ import Favorites from './components/Favorites/Favorites'
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { Route, Routes, useNavigate, useLocation } from 'react-router-dom';
+import swal from 'sweetalert';
 
 
 
@@ -25,7 +26,7 @@ function App() {
          }
 
       } catch (error) {
-         window.alert('¡No hay personajes con este ID!');
+         swal('ERROR','¡No hay personajes con este ID!','error');
       }
    };
 
@@ -40,14 +41,14 @@ function App() {
          access && navigate('/home');
 
       } catch (error) {
-         console.log(error.message);
+         swal('ERROR',error.message,'error')
       }
 
 
    }
 
    useEffect(() => {
-      !access && navigate('/');
+      !access && navigate('/home');
    }, [access]);
 
 

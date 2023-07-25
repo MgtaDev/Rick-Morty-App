@@ -1,3 +1,32 @@
 h2{
-    color: aliceblue;
+    color: white
+}
+h1{
+    color: white;
+    position: relative;
+    border-bottom-left-radius: .5rem;
+    border-top-right-radius: 5rem;
+    top: -13%;
+    background-color: rgb(56, 130, 164);
+    width: 70%;
+    left: 2.5%;
+}
+.wrapper{
+    display: flex;
+    justify-content: center;
+}
+.container{
+    padding-top: 5rem;
+    justify-content: center;
+}
+
+.detail {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    background-color: slategray;
+    width: 350px;
+    height: 500px;
+    margin: 20px;
+    box-shadow: 2px 4px 14px rgb(56, 130, 164);
 }

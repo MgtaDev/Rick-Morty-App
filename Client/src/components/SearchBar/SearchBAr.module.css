@@ -5,18 +5,22 @@
 input{
     width: 70%;
     height: 30px;
-    background-color: slategray;
+    background-color: rgb(44, 54, 64);
     border: none;
-    border-radius: 5px 0 0 5px;
+    border-radius: 5px;
+    border-left: 2px solid rgb(38, 44, 49);
+    color: white;
+    border-right: 2px solid rgb(38, 44, 49);  
 }
 
 button{
     height: 30px;
-    
+    margin-left: .5rem;
     border: none;
     border-left: 2px solid rgb(38, 44, 49);
-    background-color: slategray;
-    border-radius: 0 5px 5px 0;
+    border-right: 2px solid rgb(38, 44, 49);
+    background-color: rgb(98, 142, 186);
+    border-radius: 5px;
     color: rgb(254, 254, 254);
     cursor: pointer;
 }

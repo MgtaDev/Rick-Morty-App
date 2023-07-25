@@ -1,8 +1,9 @@
 import Card from "../Card/Card";
 import { connect } from "react-redux";
 import { useDispatch } from "react-redux";
-import { orderCards, filterCards } from "../../redux/actions";
+import { orderCards, filterCards, getAllFavorites, filterPerOrigin, filterGenderless } from "../../redux/actions";
 import { useState } from "react";
+import style from './Favorites.module.css'
 
 const Favorites = ({myFavorites}) => {
 
@@ -16,23 +17,39 @@ const Favorites = ({myFavorites}) => {
     };
 
     const handleFilter = (event) => {
-        dispatch(filterCards(event.target.value))
-    };
+        const value = event.target.value;
+        if (value === 'AllCharacters') {
+          dispatch(getAllFavorites()); // se llama a la nueva acción
+        } else if(value === 'unknown') {
+            dispatch(filterPerOrigin())
+        } else if(value === 'Genderless') {
+            dispatch(filterGenderless())
+        } else {
+            dispatch(filterCards(value));
+        }
+      };
 
     return (
-        <div>
-            <select onChange={handleOrder}>
-                <option value="A">Ascendente</option>
-                <option value="D">Descendente</option>
-            </select>
-            <select onChange={handleFilter}>
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-                <option value="Genderless">Genderless</option>
-                <option value="unknown">Unknown</option>
-                <option value="AllCharacters">All Characters</option>
-            </select>
-      {
+        <div className={style.favorites}>
+            {
+                myFavorites.length < 1
+                ? <h2>No favorites...</h2>
+                : <>
+                <select onChange={handleOrder}>
+                    <option value="A">Ascendente</option>
+                    <option value="D">Descendente</option>
+                </select><select onChange={handleFilter}>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Genderless">Genderless</option>
+                    <option value="unknown">Unknown</option>
+                    <option value="AllCharacters">All Characters</option>
+                </select>
+                </>
+            }
+         
+            <div className={style.container}>
+            {
           myFavorites?.map((fav) => {
               console.log(fav);
               return (
@@ -40,10 +57,16 @@ const Favorites = ({myFavorites}) => {
                   key={fav.id}
                   id={fav.id}
                   name={fav.name}
-                  image={fav.image}/>
+                  image={fav.image}
+                  status={fav.status}
+                  species={fav.species}
+                  gender={fav.gender}
+                  origin={fav.origin}
+                  />
                   );
                 })
             }
+            </div>
     </div>
   );
 };

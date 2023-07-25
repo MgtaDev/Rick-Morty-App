@@ -1,6 +1,8 @@
 .App {
    text-align: center;
    background-image: url(../assets/stars-1654074.jpg);
+   background-size: cover;
    min-height: 100vh;
    z-index: -10;
+   font-size: 15px
 };
